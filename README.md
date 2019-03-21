@@ -1,2 +1,6 @@
 # dsalgo
-This is the repository contains basic or advanced level implementation of few data structure(s) and algorithm(s)
+This repo contains following things,
+ 
+    - Basic or advanced level implementation(s). 
+    - Standard or custom data structure(s) and algorithm(s).
+    

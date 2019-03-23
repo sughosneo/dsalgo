@@ -1,6 +1,20 @@
 '''
 
     This is the Binary Search Tree Implementation using linked list.
+
+    Proper Binary Search Tree Looks like as per below :
+
+      9
+    /  \
+   5    14
+  / \   / \
+ 3   6  12 16
+
+- In Order Traversal
+- Pre-Order Traversal
+- Invertion / Mirror of the tree
+- Again pre-order traversal
+
 '''
 
 class Node :
@@ -92,65 +106,68 @@ class BinarySearchTree :
             self.preOrderTraversal(root.leftChild)
             self.preOrderTraversal(root.rightChild)
 
+
+    def invertedTree(self,root):
+
+        if root:
+
+            # Swap the left and right child of each node.
+
+            temp = root.leftChild
+            root.leftChild = root.rightChild
+            root.rightChild = temp
+
+            # Invert all the left child.
+            self.invertedTree(root.leftChild)
+
+            # Invert all the right child.
+            self.invertedTree(root.rightChild)
+
+
+
 if __name__ == '__main__':
 
     # Initializa the Binary Search Tree
     bst = BinarySearchTree()
 
     #region // insertion to tree
-    node = Node(20)        # Create a node
+    node = Node(9)        # Create a node
     bst.insertAItem(node) # Add it to the tree
     print("Root node now:",bst.getRootNode())
     print("Size of the tree:", bst.sizeOfTree())
 
-    node = Node(25)
+    node = Node(5)
     bst.insertAItem(node)
     print("Root node now:", bst.getRootNode())
     print("Size of the tree:", bst.sizeOfTree())
 
 
-    node = Node(45)
+    node = Node(14)
     bst.insertAItem(node)
     print("Root node now:", bst.getRootNode())
     print("Size of the tree:", bst.sizeOfTree())
 
-    node = Node(15)
+    node = Node(3)
     bst.insertAItem(node)
     print("Root node now:", bst.getRootNode())
     print("Size of the tree:", bst.sizeOfTree())
 
-    node = Node(67)
+    node = Node(6)
     bst.insertAItem(node)
     print("Root node now:", bst.getRootNode())
     print("Size of the tree:", bst.sizeOfTree())
 
-    node = Node(43)
+    node = Node(12)
     bst.insertAItem(node)
     print("Root node now:", bst.getRootNode())
 
-    node = Node(80)
-    bst.insertAItem(node)
-    print("Root node now:", bst.getRootNode())
-
-    node = Node(33)
-    bst.insertAItem(node)
-    print("Root node now:", bst.getRootNode())
-
-    node = Node(67)
-    bst.insertAItem(node)
-    print("Root node now:", bst.getRootNode())
-
-    node = Node(99)
-    bst.insertAItem(node)
-    print("Root node now:", bst.getRootNode())
-
-    node = Node(91)
+    node = Node(16)
     bst.insertAItem(node)
     print("Root node now:", bst.getRootNode())
 
     #endregion // instertion to the tree ends in here.
 
-    #region // inorer Traversal binarysearchtree
+    #region // inorder Traversal binarysearchtree
     print("In Order Traversal Of the Tree")
     rootNode = bst.getRootNode()
     print("root node value:",rootNode.value)
@@ -165,3 +182,10 @@ if __name__ == '__main__':
     #endregion
 
 
+    #region // Invertion or mirror of the Binary Search Tree
+    rootNode = bst.getRootNode()
+    bst.invertedTree(rootNode)
+    print("Pre Order traversal of the inverted Binary Search Tree")
+    rootNode = bst.getRootNode()
+    bst.preOrderTraversal(rootNode)
+    #endregion

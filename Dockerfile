@@ -6,12 +6,13 @@ RUN apt-get update \
   && ln -s /usr/bin/python3 python \
   && pip3 install --upgrade pip
 
-RUN pip install -r requirements.txt
+
+RUN apt-get install -y vim
 
 RUN mkdir -p /dsalgo
 WORKDIR /dsalgo
-COPY ./src/ .
+COPY docker /dsalgo/
 
+RUN pip3 install -r requirements.txt
 
-
-
+CMD ["python3","Intro.py"]

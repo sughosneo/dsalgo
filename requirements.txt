@@ -1,0 +1,9 @@
+falcon==1.4.1
+httplib2==0.9.2
+Pillow==5.1.0
+protobuf==3.0.0
+reportlab==3.4.0
+requests==2.18.4
+simplejson==3.13.2
+urllib3==1.22
+bitarray==0.8.3

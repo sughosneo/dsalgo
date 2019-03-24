@@ -51,6 +51,21 @@ class Hashing:
         else :
             raise Exception("Input string value is None")
 
+    '''
+        This is the hash function which would give back the 1 byte hashed value.
+    '''
+    def getOneByteHasedValue(self,inputStr):
+
+            return hashlib.md5(inputStr.encode('utf8')).digest()[0]
+
+    '''
+        This is the simple hashed function which would give back random integer for the provided string between 0 - 255
+    '''
+    def getSimpleHasedValue(self,inputStr):
+
+            return hash(inputStr) % 256
+
+
 if __name__ == '__main__':
 
     inputStr = "CAT"
@@ -64,3 +79,9 @@ if __name__ == '__main__':
     hashedSHAValue = hashing.getSHA256(inputStr)
     n = int(hashedSHAValue, base=16)
     print(n)
+
+    hasedOneByteValue = hashing.getOneByteHasedValue(inputStr)
+    print(hasedOneByteValue)
+
+    simpleHashedValue = hashing.getSimpleHasedValue(inputStr)
+    print(simpleHashedValue)

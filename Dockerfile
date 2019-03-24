@@ -11,7 +11,7 @@ RUN apt-get install -y vim
 
 RUN mkdir -p /dsalgo
 WORKDIR /dsalgo
-COPY docker /dsalgo/
+COPY ./ /dsalgo/
 
 RUN pip3 install -r requirements.txt
 

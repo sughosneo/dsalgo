@@ -144,6 +144,28 @@ class SinglyLinkedList:
             print(currentItem.value)
             currentItem = currentItem.next
 
+    '''
+        Reverse all linked list items.
+    '''
+    def reverseLinkedList(self):
+
+        currentItem = self.__head
+
+        # Set the last item as first item
+        self.__tail = self.__head
+
+        while(currentItem):
+
+            previousItem = self.__head
+            currentItem = currentItem.next
+
+            self.__head = currentItem
+            self.__head.next = previousItem
+
+            print("self.__head",self.__head.value)
+
+
+
 if __name__ == '__main__':
 
     linkedList = SinglyLinkedList()
@@ -201,6 +223,11 @@ if __name__ == '__main__':
     print("Again Tail Item", tailItem.value)
     # endregion
 
+    #region // Reverse one Linked List
+    linkedList.reverseLinkedList()
+    print("Reversed one linked list")
+    linkedList.printAllItems()
+    #endregion
 
 
 

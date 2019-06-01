@@ -70,7 +70,6 @@ class Hashing:
 
             return hash(inputStr) % 256
 
-
 if __name__ == '__main__':
 
     inputStr = "CAT"

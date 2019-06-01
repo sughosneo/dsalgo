@@ -14,6 +14,7 @@ import hashlib
 class Hashing:
 
     def __init__(self):
+
         pass
 
     '''
@@ -21,7 +22,11 @@ class Hashing:
         Used to check data integrity.
     '''
     def getMD5Hash(self,inputStr):
+        '''
 
+        :param inputStr:
+        :return:
+        '''
         if inputStr :
 
             encodedStr = inputStr.encode('utf-8')

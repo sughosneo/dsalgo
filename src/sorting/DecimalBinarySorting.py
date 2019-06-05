@@ -1,3 +1,8 @@
+'''
+    Below scripts help to arrange elements in the array using it's corresponding binary representation.
+    If the number of 1's is same in binary representation of a integer value then it's get sorted using decimal value.
+'''
+
 def __swap(arrInput,i,k):
 
     temp = arrInput[i]
